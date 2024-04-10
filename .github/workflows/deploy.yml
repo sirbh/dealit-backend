@@ -19,11 +19,7 @@ jobs:
     - name: Deploy via SSH
       run: echo "Deploying to server"
 
-    # - name: Deploy via SSH
-    #   env:
-    #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-    #   run: |
-    #     mkdir -p ~/.ssh
-    #     echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-    #     chmod 600 ~/.ssh/id_rsa
-    #     ssh user@your-server "cd /path/to/project && git pull"
+    - name: Deploy via SSH
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: echo "$SSH_PRIVATE_KEY"
